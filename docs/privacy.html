@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CalmMaker Privacy Policy" />
+  <meta name="theme-color" content="#0a1612" />
+  <title>Privacy Policy — CalmMaker</title>
+  <link rel="icon" type="image/png" href="app_icon.png" />
+  <style>
+    :root {
+      --bg-primary: #0a1612;
+      --bg-secondary: #0f1f1a;
+      --bg-card: #16291f;
+      --accent-primary: #34d399;
+      --accent-secondary: #10b981;
+      --accent-glow: rgba(52, 211, 153, 0.18);
+      --text-primary: #ecfdf5;
+      --text-secondary: #a7f3d0;
+      --text-muted: #6ee7b7;
+      --border: rgba(52, 211, 153, 0.15);
+      --border-strong: rgba(52, 211, 153, 0.3);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .ambient {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 800px 600px at 20% 10%, rgba(16, 185, 129, 0.1), transparent 60%),
+        radial-gradient(ellipse 600px 500px at 80% 80%, rgba(4, 120, 87, 0.08), transparent 60%);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(10, 22, 18, 0.7);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .nav-brand img { width: 32px; height: 32px; border-radius: 8px; }
+
+    .nav-back {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--accent-primary); }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    .page-eyebrow {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      background: var(--accent-glow);
+      border: 1px solid var(--border-strong);
+      border-radius: 999px;
+      color: var(--accent-primary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-primary) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .updated {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 2.5rem 0 0.75rem;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--accent-primary);
+    }
+
+    p, ul {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    ul { padding-left: 1.5rem; }
+    ul li { margin-bottom: 0.4rem; }
+
+    a {
+      color: var(--accent-primary);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    strong { color: var(--text-primary); font-weight: 600; }
+
+    .callout {
+      padding: 1.5rem 1.75rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-strong);
+      border-left: 4px solid var(--accent-primary);
+      border-radius: 12px;
+      margin: 1.5rem 0;
+    }
+
+    .callout p:last-child { margin-bottom: 0; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 2rem;
+      background: var(--bg-card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    th, td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.92rem;
+    }
+
+    th {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    td { color: var(--text-secondary); }
+
+    tr:last-child td { border-bottom: none; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient"></div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="app_icon.png" alt="CalmMaker" />
+        CalmMaker
+      </a>
+      <a href="index.html" class="nav-back">← Back to home</a>
+    </div>
+  </nav>
+
+  <main>
+    <span class="page-eyebrow">Privacy</span>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: 2 May 2026</p>
+
+    <div class="callout">
+      <p>
+        <strong>The short version:</strong> CalmMaker doesn't have user accounts, doesn't ask you to sign in, and doesn't upload your photos or recordings anywhere. The content you create stays on your device. The app uses a few standard third-party services (advertising, purchases, anonymous analytics) and this policy explains exactly what they collect.
+      </p>
+    </div>
+
+    <h2>1. Who we are</h2>
+    <p>
+      CalmMaker (the "App") is developed by <strong>Misiak Team</strong> ("we", "us"). For any questions about this policy or your data, contact us at <a href="mailto:calmmakerapp@gmail.com">calmmakerapp@gmail.com</a>.
+    </p>
+
+    <h2>2. Data you create in the App</h2>
+    <p>
+      When you use CalmMaker, you may create checklists, entries, photos, and video recordings. <strong>All of this content is stored locally on your device</strong> in the App's private storage. We do not have access to it. We do not upload it to any server. It is never transmitted off your device.
+    </p>
+    <p>
+      When you delete an entry — manually or via auto-cleanup — the associated photos and videos are permanently removed from the App's storage.
+    </p>
+
+    <h2>3. Data collected by third-party services</h2>
+    <p>
+      The App uses a small number of third-party services that operate independently of us. Each has its own privacy policy:
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Purpose</th>
+          <th>What it may collect</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Google AdMob</strong> (Android)</td>
+          <td>Showing ads in the free version</td>
+          <td>Advertising ID, device info, approximate location, ad interactions</td>
+        </tr>
+        <tr>
+          <td><strong>Google Play Billing</strong></td>
+          <td>Processing the optional Pro purchase</td>
+          <td>Purchase tokens, product IDs (handled by Google)</td>
+        </tr>
+        <tr>
+          <td><strong>Apple StoreKit</strong> (iOS)</td>
+          <td>Processing the optional Pro purchase</td>
+          <td>Purchase receipts (handled by Apple)</td>
+        </tr>
+        <tr>
+          <td><strong>Kotzilla SDK</strong></td>
+          <td>Anonymous usage analytics &amp; crash reporting</td>
+          <td>Anonymous app usage events, crash diagnostics, device model, OS version</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>3.1 Google AdMob</h3>
+    <p>
+      In the free version of the App we display ads served by Google AdMob. AdMob may collect a device advertising identifier and other technical information to deliver and measure ads. You can review Google's policy at <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">policies.google.com/technologies/ads</a> and reset or limit ad personalization in your device settings.
+    </p>
+    <p>
+      Purchasing the Pro version <strong>permanently removes ads</strong> from the App and stops AdMob from being used.
+    </p>
+
+    <h3>3.2 In-app purchases</h3>
+    <p>
+      The Pro upgrade is processed by Google Play (Android) or Apple's App Store (iOS). We never see your payment details. We only receive a purchase token that confirms whether you own the Pro version on the active device account.
+    </p>
+
+    <h3>3.3 Anonymous analytics</h3>
+    <p>
+      We use Kotzilla SDK to understand how features are used (e.g. which screens are opened) and to receive crash reports. These reports do not include the content of your checklists, photos, or videos. They are linked only to anonymous, randomly generated identifiers.
+    </p>
+
+    <h2>4. Permissions the App requests</h2>
+    <ul>
+      <li><strong>Camera</strong> — to take photos and record videos that you choose to attach to checklist items.</li>
+      <li><strong>Storage / Photos</strong> — to save the photos and videos in the App's private storage.</li>
+      <li><strong>Notifications</strong> (optional) — only if you opt in to reminders.</li>
+    </ul>
+    <p>
+      All permissions are used solely for App features. No data captured under these permissions is sent off your device.
+    </p>
+
+    <h2>5. Children's privacy</h2>
+    <p>
+      CalmMaker is intended for general audiences and is not directed at children under 13. We do not knowingly collect personal data from children. If you believe a child has provided personal data to us, please contact us so we can investigate.
+    </p>
+
+    <h2>6. Your rights (GDPR)</h2>
+    <p>
+      If you are in the European Economic Area, the United Kingdom, or another jurisdiction with similar laws, you have the following rights regarding any personal data:
+    </p>
+    <ul>
+      <li>Right to access — request a copy of any data we hold about you</li>
+      <li>Right to rectification — ask us to correct inaccurate data</li>
+      <li>Right to erasure — ask us to delete your data</li>
+      <li>Right to object to processing</li>
+      <li>Right to data portability</li>
+      <li>Right to lodge a complaint with a supervisory authority</li>
+    </ul>
+    <p>
+      Because most data stays on your device, you can exercise the right to erasure by uninstalling the App. For data held by third parties (AdMob, Kotzilla), please use their respective opt-out tools.
+    </p>
+
+    <h2>7. International data transfers</h2>
+    <p>
+      The third-party services listed above may process data in the United States or other countries outside the European Economic Area. These transfers are governed by the privacy frameworks and standard contractual clauses adopted by those providers.
+    </p>
+
+    <h2>8. Data retention</h2>
+    <p>
+      Content you create in the App is retained until you delete it (manually or via auto-cleanup) or uninstall the App. Third-party services retain data according to their own retention schedules.
+    </p>
+
+    <h2>9. Changes to this policy</h2>
+    <p>
+      We may update this policy from time to time. The "Last updated" date at the top reflects the most recent revision. Material changes will be highlighted in the App or on this page.
+    </p>
+
+    <h2>10. Contact</h2>
+    <p>
+      Questions, requests, or feedback? Email <a href="mailto:calmmakerapp@gmail.com">calmmakerapp@gmail.com</a>.
+    </p>
+  </main>
+
+  <footer>
+    © 2026 Misiak Team · <a href="index.html">Back to home</a>
+  </footer>
+</body>
+</html>
